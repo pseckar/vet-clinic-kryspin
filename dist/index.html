@@ -5,11 +5,22 @@ TODO:
 - favicon (ios too)
 - refactor warning color to css
 - cleanup js (portfolio modals etc)
-- fb icon, snippet
+- fb icon
 - copyright, author
 - "upozorneni" long on mobile in case of icons
-- map more responsive
 - cleanup resources
+- height of the map - set min value
+- landing image - embed logo and darken top
+- unify fonts
+- different logo on mobile
+- names in front of photos (for mobile)
+- images in different res for different media
+- proper logo size on all media (without the <br> hack)
+- automatic turn-off of announcement
+- load saved announcement
+- setting for announcement type - information/warning
+- proper error display of unsuccessful login and successful update of announcement
+- short button on mobile
 -->
 <html lang="en">
     <head>
@@ -17,7 +28,7 @@ TODO:
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Agency - Start Bootstrap Theme</title>
+        <title>Veterina U Kryšpína - Hlinsko</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -30,10 +41,9 @@ TODO:
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
             <div class="container">
-                <!-- <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a> -->
-                <a class="btn btn-primary btn-xl text-uppercase" href="tel:+420773917333"><i class="fas fa-phone"></i> 773 917 333</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="tel:+420773917333"><i class="fas fa-phone"></i> Objednávky: 773 917 333</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -51,9 +61,7 @@ TODO:
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <!-- <div class="masthead-subheading">Welcome To Our Studio!</div> -->
-                <div class="masthead-heading text-uppercase">Veterina U Kryšpína</div>
-                
+                <div class="masthead-heading text-uppercase"><br/></div> <!-- TODO fix -->                
             </div>
         </header>
         <!-- Hours-->
@@ -115,14 +123,7 @@ TODO:
                           </table>
                         <p class="text-center">Přednost mají objednaní pacienti.</p>
                     </div>
-                    <div class="col-md-6">
-                        <div class="text-center">
-                            <h2 class="section-heading text-uppercase"><i class="fas fa-warning" style="color: #e6b400"></i> Upozornění <i class="fas fa-warning" style="color: #e6b400"></i></h2>
-                        </div>
-                        <p class="text-center">Ve dnech 11. až 13. března bude klinika uzavřena.
-                            <br/> Omlouváme se za potíže.
-                        </p>
-                    </div>
+                    <div class="col-md-6 px-3" id="announcement"></div>
                 </div>
             </div>
         </section>
@@ -201,75 +202,14 @@ TODO:
                         <p class="text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus tellus lacus, nec malesuada ante finibus et. Ut in quam efficitur felis finibus ornare. Phasellus sit amet volutpat ex, sed facilisis justo. Aliquam diam nisl, malesuada vitae fringilla quis, dignissim cursus purus. Pellentesque venenatis ligula semper orci mollis porta. Praesent lacinia, nulla vel congue auctor, nisl erat tincidunt sapien, nec congue sem lectus vitae neque. Ut venenatis feugiat turpis, ac dictum arcu sodales gravida. 
                         </p>
+                        <p class="text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus tellus lacus, nec malesuada ante finibus et. Ut in quam efficitur felis finibus ornare. Phasellus sit amet volutpat ex, sed facilisis justo. Aliquam diam nisl, malesuada vitae fringilla quis, dignissim cursus purus. Pellentesque venenatis ligula semper orci mollis porta. Praesent lacinia, nulla vel congue auctor, nisl erat tincidunt sapien, nec congue sem lectus vitae neque. Ut venenatis feugiat turpis, ac dictum arcu sodales gravida. 
+                        </p>
                     </div>
-                    <div class="col-md-6">
-                        <iframe style="border:none" src="https://frame.mapy.cz/s/kahecodaba" width="400" height="280" frameborder="0"></iframe>
+                    <div class="col-md-6 me-auto">
+                        <iframe style="border:none;width: 100%; height: 100%" src="https://frame.mapy.cz/s/kahecodaba" frameborder="0"></iframe>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- Form-->
-        <section class="page-section" id="form" hidden>
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <div class="form-group">
-                                <!-- Email address input-->
-                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <div class="form-group mb-md-0">
-                                <!-- Phone number input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <!-- Message input-->
-                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                    <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
-                </form>
             </div>
         </section>
         <!-- Footer-->
@@ -293,10 +233,23 @@ TODO:
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <!-- JS for showing/hiding announcement -->
+        <script>
+            fetch('info.json')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.announcement.active) {
+                        document.getElementById('announcement').innerHTML = `
+                            <div class="alert alert-info" role="alert"><div class="text-center">
+                                <h2 class="section-heading text-uppercase"><i class="fas fa-warning" style="color: #e6b400"></i> Upozornění <i class="fas fa-warning" style="color: #e6b400"></i></h2>
+                            </div>${data.announcement.message}</div>
+                        `;
+                    }
+                    else {
+                        document.getElementById('announcement').className = "hidden";
+                    }
+                })
+                .catch(error => console.error('Error loading the announcement:', error));
+        </script>
     </body>
 </html>

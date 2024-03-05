@@ -339,6 +339,7 @@ th {
 
 label {
   display: inline-block;
+  text-align: right;
 }
 
 button {
@@ -2022,9 +2023,9 @@ progress {
 .form-control:focus {
   color: #212529;
   background-color: #fff;
-  border-color: #ffe480;
+  border-color: #9debea;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
+  box-shadow: 0 0 0 0.25rem #9debea;
 }
 .form-control::-webkit-date-and-time-value {
   height: 1.5em;
@@ -2249,9 +2250,9 @@ textarea.form-control-lg {
   filter: brightness(90%);
 }
 .form-check-input:focus {
-  border-color: #ffe480;
+  border-color: #9debea;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
+  box-shadow: 0 0 0 0.25rem #9debea;
 }
 .form-check-input:checked {
   background-color: #68bcba;
@@ -2587,7 +2588,7 @@ textarea.form-control-lg {
 }
 
 .valid-feedback {
-  page-sectione;
+  display: none;
   width: 100%;
   margin-top: 0.25rem;
   font-size: 0.875em;
@@ -3729,7 +3730,7 @@ textarea.form-control-lg {
 .navbar {
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
-  --bs-navbar-color: rgba(0, 0, 0, 0.55);
+  --bs-navbar-color: #fff;
   --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
   --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
   --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
@@ -3743,7 +3744,7 @@ textarea.form-control-lg {
   --bs-navbar-toggler-padding-x: 0.75rem;
   --bs-navbar-toggler-font-size: 1.25rem;
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  --bs-navbar-toggler-border-color: rgba(0, 0, 0, 0.1);
+  --bs-navbar-toggler-border-color: #68bcba;
   --bs-navbar-toggler-border-radius: 0.375rem;
   --bs-navbar-toggler-focus-width: 0.25rem;
   --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
@@ -3822,7 +3823,7 @@ textarea.form-control-lg {
   font-size: var(--bs-navbar-toggler-font-size);
   line-height: 1;
   color: var(--bs-navbar-color);
-  background-color: transparent;
+  background-color: #68bcba;
   border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
   border-radius: var(--bs-navbar-toggler-border-radius);
   transition: var(--bs-navbar-toggler-transition);
@@ -3834,6 +3835,7 @@ textarea.form-control-lg {
 }
 .navbar-toggler:hover {
   text-decoration: none;
+  background-color: #4e9694;
 }
 .navbar-toggler:focus {
   text-decoration: none;
@@ -4622,7 +4624,7 @@ textarea.form-control-lg {
 .alert {
   --bs-alert-bg: transparent;
   --bs-alert-padding-x: 1rem;
-  --bs-alert-padding-y: 1rem;
+  --bs-alert-padding-y: 2rem;
   --bs-alert-margin-bottom: 1rem;
   --bs-alert-color: inherit;
   --bs-alert-border-color: transparent;
@@ -4684,9 +4686,9 @@ textarea.form-control-lg {
 }
 
 .alert-info {
-  --bs-alert-color: #087990;
-  --bs-alert-bg: #cff4fc;
-  --bs-alert-border-color: #b6effb;
+  --bs-alert-color: #000;
+  --bs-alert-bg: #bff7f6;
+  --bs-alert-border-color: #9debea;
 }
 .alert-info .alert-link {
   color: #066173;
@@ -10878,7 +10880,7 @@ p {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #212529;
+  background-color: #9debea;
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -10899,12 +10901,13 @@ p {
 }
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.95rem;
-  color: #fff;
+  font-size: 1.1rem;
+  font-weight:bold;
+  color: #000;
   letter-spacing: 0.0625em;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #68bcba;
+  color: #3e7c7a;
 }
 
 @media (min-width: 992px) {
@@ -10926,7 +10929,7 @@ p {
   #mainNav.navbar-shrink {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #212529;
+    background-color: #9debea ;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
