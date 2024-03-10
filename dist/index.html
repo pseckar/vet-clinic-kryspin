@@ -4,27 +4,18 @@ TODO:
 - metadata
 - favicon (ios too)
 - refactor warning color to css
-- cleanup js (portfolio modals etc)
-- copyright, author
-- "upozorneni" long on mobile in case of icons
-- cleanup resources
+- author, sources
 - height of the map - set min value
-- landing image - embed logo
 - unify fonts
-- different logo on mobile
 - names in front of photos (for mobile)
 - images in different res for different media
-- proper logo size on all media (without the <br> hack)
 - automatic turn-off of announcement
 - load saved announcement
 - setting for announcement type - information/warning
 - proper error display of unsuccessful login and successful update of announcement
-- short button on mobile
 - load pass hash from config
 - better fb logo hover
 - buttons to go down and to the top
-- unify buttons on mobile
-- transparent menu overlaying on tablet
 - js for getting actual year
 -->
 <html lang="en">
@@ -49,10 +40,10 @@ TODO:
         <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
             <div class="container">
                 <div class="navbar-brand">
-                    <a class="btn btn-primary btn-xl text-uppercase ms-auto responsive-text-button" href="tel:+420773917333"><i class="fas fa-phone"></i><span class="text-medium-screen text-large-screen"> Objednání:</span> 773 917 333</a>
+                    <a class="btn btn-primary btn-xl text-uppercase ms-auto responsive-text-button" href="tel:+420773917333"><i class="fas fa-phone"></i><span class="text-medium-screen text-large-screen"> Objednání:</span><span class="text-small-screen text-medium-screen text-large-screen"> 773 917 333</span></a>
                 </div>
                 <!-- removed navbar-toggler -->
-                <button class="navbar-toggler btn btn-primary btn-xl ms-auto " type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler btn btn-primary btn-xl ms-auto collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -61,7 +52,7 @@ TODO:
                         <li class="nav-item"><a class="nav-link" href="#team">O&nbsp;nás</a></li>
                         <li class="nav-item"><a class="nav-link" href="#clinic">Služby</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
-                        <li class="nav-item"><a class="btn btn-social ms-3" href="https://www.facebook.com/people/Veterina-U-Kry%C5%A1p%C3%ADna-Hlinsko/100063786616008/" target="_blank" aria-label="Facebook"><i class="fab fa-square-facebook"></i></a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-social ms-3" href="https://www.facebook.com/people/Veterina-U-Kry%C5%A1p%C3%ADna-Hlinsko/100063786616008/" target="_blank" aria-label="Facebook"><i class="fab fa-square-facebook"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -72,8 +63,14 @@ TODO:
         <!-- Masthead-->
         <header class="masthead">
         <!-- <header class="masthead pb-4" style="padding-top: 23rem;"> -->
-            <div class="container masthead-logo">
-                <img class="mt-5" src="assets/img/logo.png" alt="..." />             
+            <!-- <div class="container masthead-logo"> -->
+            <div class="container">
+                <div class="row">
+                    <!-- Empty div for space to see the background image -->
+                    <div class="col-md-5"></div>
+                    <div class="col-md-7"><img class="" style="width:100%;" src="assets/img/logo.png" alt="..." /> </div>
+                </div>
+                <!-- <img class="mt-5" src="assets/img/logo.png" alt="..." />              -->
             </div>
         </header>
         <!-- Hours-->
@@ -264,8 +261,13 @@ TODO:
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 text-lg-start">Copyright &copy; Veterina U Kryšpína 2024</div>
-                    <div class="col-lg-6 text-lg-end">
+                    <div class="footer-link col-lg-4 text-lg-start">
+                        <a class="footer-link" href="/admin">Administrace webu</a>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        Copyright &copy; Veterina U Kryšpína 2024
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
                         <a class="link-dark text-decoration-none me-3" href="#!">Author</a>
                         <a class="link-dark text-decoration-none" href="#!">Sources</a>
                     </div>
@@ -277,15 +279,19 @@ TODO:
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <!-- JS for showing/hiding announcement -->
+        <!-- TODO removed this:<i class="fas fa-warning" style="color: #e6b400"></i> -->
         <script>
             fetch('info.json')
                 .then(response => response.json())
                 .then(data => {
                     if (data.announcement.active) {
                         document.getElementById('announcement').innerHTML = `
-                            <div class="alert alert-info" role="alert"><div class="text-center">
-                                <h2 class="section-heading text-uppercase"><i class="fas fa-warning" style="color: #e6b400"></i> Upozornění <i class="fas fa-warning" style="color: #e6b400"></i></h2>
-                            </div>${data.announcement.message}</div>
+                            <div class="alert alert-warning" role="alert">
+                                <div class="text-center">
+                                    <h2 class="section-heading text-uppercase">Upozornění</h2>
+                                    <p>${data.announcement.message}</p>
+                                </div>
+                            </div>
                         `;
                     }
                     else {

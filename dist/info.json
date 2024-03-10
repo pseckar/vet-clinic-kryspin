@@ -1,6 +1,6 @@
 {
     "announcement": {
-        "active": false,
-        "message": "afdasdfs"
+        "active": true,
+        "message": "test"
     }
 }
