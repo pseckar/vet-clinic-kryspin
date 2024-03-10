@@ -5,12 +5,11 @@ TODO:
 - favicon (ios too)
 - refactor warning color to css
 - cleanup js (portfolio modals etc)
-- fb icon
 - copyright, author
 - "upozorneni" long on mobile in case of icons
 - cleanup resources
 - height of the map - set min value
-- landing image - embed logo and darken top
+- landing image - embed logo
 - unify fonts
 - different logo on mobile
 - names in front of photos (for mobile)
@@ -21,6 +20,12 @@ TODO:
 - setting for announcement type - information/warning
 - proper error display of unsuccessful login and successful update of announcement
 - short button on mobile
+- load pass hash from config
+- better fb logo hover
+- buttons to go down and to the top
+- unify buttons on mobile
+- transparent menu overlaying on tablet
+- js for getting actual year
 -->
 <html lang="en">
     <head>
@@ -43,25 +48,32 @@ TODO:
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
             <div class="container">
-                <a class="btn btn-primary btn-xl text-uppercase" href="tel:+420773917333"><i class="fas fa-phone"></i> Objednávky: 773 917 333</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ms-1"></i>
+                <div class="navbar-brand">
+                    <a class="btn btn-primary btn-xl text-uppercase ms-auto responsive-text-button" href="tel:+420773917333"><i class="fas fa-phone"></i><span class="text-medium-screen text-large-screen"> Objednání:</span> 773 917 333</a>
+                </div>
+                <!-- removed navbar-toggler -->
+                <button class="navbar-toggler btn btn-primary btn-xl ms-auto " type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#hours">Ordinační doba</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">O nás</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">O&nbsp;nás</a></li>
                         <li class="nav-item"><a class="nav-link" href="#clinic">Služby</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
+                        <li class="nav-item"><a class="btn btn-social ms-3" href="https://www.facebook.com/people/Veterina-U-Kry%C5%A1p%C3%ADna-Hlinsko/100063786616008/" target="_blank" aria-label="Facebook"><i class="fab fa-square-facebook"></i></a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <div class="float-lg-end navbar navbar-expand-lg pt-6 me-5" id="logoNav" hidden>
+                <img  src="assets/img/logo.png" alt="..." /> 
+        </div>
         <!-- Masthead-->
         <header class="masthead">
-            <div class="container">
-                <div class="masthead-heading text-uppercase"><br/></div> <!-- TODO fix -->                
+        <!-- <header class="masthead pb-4" style="padding-top: 23rem;"> -->
+            <div class="container masthead-logo">
+                <img class="mt-5" src="assets/img/logo.png" alt="..." />             
             </div>
         </header>
         <!-- Hours-->
@@ -75,7 +87,7 @@ TODO:
                         <table class="table table-hover">
                             <tbody>
                               <tr>
-                                <th>Po, St</th4>
+                                <th>Po, St</th>
                                 <td>10:00-12:00</td>
                                 <td>14:00-17:00</td>
                               </tr>
@@ -83,6 +95,10 @@ TODO:
                                 <th>Út, Čt, Pá</th>
                                 <td>9:00-11:00</td>
                                 <td>15:00-18:00</td>
+                              </tr>
+                              <tr>
+                                <th>So, Ne</th>
+                                <td colspan="2">Zavřeno (pohotovost pouze po tel. domluvě)</td>
                               </tr>
                             </tbody>
                           </table>
@@ -134,12 +150,19 @@ TODO:
                     <h2 class="section-heading text-uppercase">O nás</h2>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-12 m-2">
+                        <p class="text-center">
+                            Vítejte na stránkách <i>Veteriny U Kryšpína</i> (dříve také <i>Veterina Hlinsko</i>), první specializované ordinace pro malá zvířata v Hlinsku.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-2 p-5">
                         <img class="img-fluid mx-auto rounded-pill" src="assets/img/team/peta.jpg" alt="..." />
                     </div>
-                    <div class="col-md-8 mb-4">
+                    <div class="col-md-8 mb-2 p-5">
                         <h1 class="text">Peťa</h1>
-                        <h4 class="text mb-4">MVDr. Petra Korábová</h4>
+                        <h4 class="text mb-2">MVDr. Petra Korábová</h4>
                         <p class="text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus tellus lacus, nec malesuada ante finibus et. Ut in quam efficitur felis finibus ornare. Phasellus sit amet volutpat ex, sed facilisis justo. Aliquam diam nisl, malesuada vitae fringilla quis, dignissim cursus purus. Pellentesque venenatis ligula semper orci mollis porta. Praesent lacinia, nulla vel congue auctor, nisl erat tincidunt sapien, nec congue sem lectus vitae neque. Ut venenatis feugiat turpis, ac dictum arcu sodales gravida. 
                         </p>
@@ -149,9 +172,9 @@ TODO:
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-8 mb-4">
+                    <div class="col-md-8 mb-2 p-5">
                         <h1 class="text">Verča</h1>
-                        <h4 class="text mb-4">MVDr. Veronika Bodláková</h4>
+                        <h4 class="text mb-2">MVDr. Veronika Bodláková</h4>
                         <p class="text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus tellus lacus, nec malesuada ante finibus et. Ut in quam efficitur felis finibus ornare. Phasellus sit amet volutpat ex, sed facilisis justo. Aliquam diam nisl, malesuada vitae fringilla quis, dignissim cursus purus. Pellentesque venenatis ligula semper orci mollis porta. Praesent lacinia, nulla vel congue auctor, nisl erat tincidunt sapien, nec congue sem lectus vitae neque. Ut venenatis feugiat turpis, ac dictum arcu sodales gravida. 
                         </p>
@@ -159,17 +182,17 @@ TODO:
                             Praesent sem lorem, lacinia a tortor vitae, porttitor semper nisl. Curabitur nec sapien sagittis, cursus turpis vitae, molestie dolor. In lectus lorem, congue eget interdum non, molestie id tellus. Etiam facilisis augue odio, non accumsan erat convallis ut. Phasellus vitae lacus purus. Curabitur commodo ipsum ligula, vitae sodales lorem mattis sit amet. Nunc ullamcorper risus pretium nisi dictum, a sagittis neque malesuada. Mauris ac ipsum vitae purus pellentesque tincidunt.
                         </p>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-4 mb-2 p-5">
                         <img class="img-fluid mx-auto rounded-pill" src="assets/img/team/verca.jpg" alt="..." />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-4 mb-2 p-5">
                         <img class="img-fluid mx-auto rounded-pill" src="assets/img/team/barca.jpg" alt="..." />
                     </div>
-                    <div class="col-md-8 mb-4"> 
+                    <div class="col-md-8 mb-2 p-5"> 
                         <h1 class="text">Barča</h1>
-                        <h4 class="text mb-4">MVDr. Barbora Sečkářová</h4>
+                        <h4 class="text mb-2">MVDr. Barbora Sečkářová</h4>
                         <p class="text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus tellus lacus, nec malesuada ante finibus et. Ut in quam efficitur felis finibus ornare. Phasellus sit amet volutpat ex, sed facilisis justo. Aliquam diam nisl, malesuada vitae fringilla quis, dignissim cursus purus. Pellentesque venenatis ligula semper orci mollis porta. Praesent lacinia, nulla vel congue auctor, nisl erat tincidunt sapien, nec congue sem lectus vitae neque. Ut venenatis feugiat turpis, ac dictum arcu sodales gravida. 
                         </p>
@@ -195,16 +218,41 @@ TODO:
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Kontakt</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <p class="text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus tellus lacus, nec malesuada ante finibus et. Ut in quam efficitur felis finibus ornare. Phasellus sit amet volutpat ex, sed facilisis justo. Aliquam diam nisl, malesuada vitae fringilla quis, dignissim cursus purus. Pellentesque venenatis ligula semper orci mollis porta. Praesent lacinia, nulla vel congue auctor, nisl erat tincidunt sapien, nec congue sem lectus vitae neque. Ut venenatis feugiat turpis, ac dictum arcu sodales gravida. 
+                        <h5 class="text ps-2">Adresa ordinace:</h5>
+                        <p class="text ps-2">
+                            Veterina U Kryšpína<br/>
+                            Rváčovská 868<br/>
+                            539 01 Hlinsko (okres Chrudim)<br/>
                         </p>
-                        <p class="text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus tellus lacus, nec malesuada ante finibus et. Ut in quam efficitur felis finibus ornare. Phasellus sit amet volutpat ex, sed facilisis justo. Aliquam diam nisl, malesuada vitae fringilla quis, dignissim cursus purus. Pellentesque venenatis ligula semper orci mollis porta. Praesent lacinia, nulla vel congue auctor, nisl erat tincidunt sapien, nec congue sem lectus vitae neque. Ut venenatis feugiat turpis, ac dictum arcu sodales gravida. 
+                        <h5 class="text ps-2">Kontakty:</h5>
+                        <p class="text ps-2">
+                            MVDr. Petra Korábová, MVDr. Veronika Bodláková<br/>
+                            IČ: 03057577<br/>
+                            Tel: <a href="tel:+420773917333">+420 773 917 333</a><br/>
+                            E-mail: <a href="mailto:veterinahlinsko@seznam.cz">veterinahlinsko@seznam.cz</a><br/>
+                            Sledujte nás na FB <a href="https://www.facebook.com/people/Veterina-U-Kry%C5%A1p%C3%ADna-Hlinsko/100063786616008/">Veterina U Kryšpína Hlinsko</a>
                         </p>
+                        <h5 class="text ps-2">Ordinační doba:</h5>
+                        <table class="table table-borderless">
+                            <tbody>
+                            <tr>
+                                <td>Po, St</td>
+                                <td>10:00 - 12:00</td>
+                                <td>14:00 - 17:00</td>
+                            </tr>
+                            <tr>
+                                <td>Út, Čt, Pá</td>
+                                <td>9:00 - 11:00</td>
+                                <td>15:00 - 18:00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Mimo ordinační hodiny objednané operace. Výjezdy a pohotovost pouze po předchozí telefonické domluvě. </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="col-md-6 me-auto">
                         <iframe style="border:none;width: 100%; height: 100%" src="https://frame.mapy.cz/s/kahecodaba" frameborder="0"></iframe>
@@ -216,15 +264,10 @@ TODO:
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
-                    <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                    <div class="col-lg-6 text-lg-start">Copyright &copy; Veterina U Kryšpína 2024</div>
+                    <div class="col-lg-6 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="#!">Author</a>
+                        <a class="link-dark text-decoration-none" href="#!">Sources</a>
                     </div>
                 </div>
             </div>
