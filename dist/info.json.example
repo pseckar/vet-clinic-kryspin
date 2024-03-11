@@ -1,0 +1,6 @@
+{
+    "announcement": {
+        "active": true,
+        "message": "Test announcement message."
+    }
+}

@@ -4,6 +4,25 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: login');
     exit;
 }
+
+// Initialize variables to hold the announcement data with default values
+$announcementType = "Warning"; // Default value
+$announcementActive = '';
+$announcementMessage = '';
+
+// Read and decode JSON
+$infoFile = 'info.json';
+if (file_exists($infoFile)) {
+    $jsonContent = file_get_contents($infoFile);
+    $info = json_decode($jsonContent, true);
+} else {
+    die("Info file not found.");
+}
+
+// Get announcement data
+$announcementActive = $info['announcement']['active'] ? 'checked' : '';
+$announcementMessage = $info['announcement']['message'];
+$announcementType = isset($info['announcement']['type']) ? $info['announcement']['type'] : $announcementType;
 ?>
 
 <!DOCTYPE html>
@@ -34,15 +53,22 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     <div class="col-md-6">
                         <div class="text-center">
                             <h2 class="section-heading text-uppercase">Administrace</h2>
-                            <h3>Editace upozornění</h3>
+                            <h3>Editace oznámení</h3>
                         </div>
                         <form action="update_announcement.php" method="post">
                             <div class="mb-4">
-                                <label for="message" class="form-label">Text upozornění</label>
-                                <textarea id="message" class="form-control" name="message" rows="3" maxlength="1000" required placeholder="Zadejte text upozornění"></textarea>
+                                <label for="message" class="form-label">Text oznámení</label>
+                                <textarea id="message" class="form-control" name="message" rows="3" maxlength="1000" required placeholder="Zadejte text upozornění"><?php echo htmlspecialchars($announcementMessage); ?></textarea>
                             </div>
                             <div class="mb-4">
-                                <input type="checkbox" id="active" class="form-check-input" name="active" value="1">
+                                <label for="type" class="form-label">Typ oznámení</label>
+                                <select id="type" name="type" class="form-select">
+                                    <option value="Information" <?php echo $announcementType == 'Information' ? 'selected' : ''; ?>>Informace</option>
+                                    <option value="Warning" <?php echo $announcementType == 'Warning' ? 'selected' : ''; ?>>Upozornění</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <input type="checkbox" id="active" class="form-check-input" name="active" value="1" <?php echo $announcementActive; ?>>
                                 <label for="active" class="form-label">Zobrazit na webu</label>
                             </div>
                             <button class="btn btn-primary text-uppercase" type="submit">Aktualizovat</button>

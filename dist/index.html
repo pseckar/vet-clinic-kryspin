@@ -10,10 +10,7 @@ TODO:
 - names in front of photos (for mobile)
 - images in different res for different media
 - automatic turn-off of announcement
-- load saved announcement
-- setting for announcement type - information/warning
 - proper error display of unsuccessful login and successful update of announcement
-- load pass hash from config
 - better fb logo hover
 - buttons to go down and to the top
 - js for getting actual year
@@ -288,7 +285,7 @@ TODO:
                 .then(data => {
                     if (data.announcement.active) {
                         document.getElementById('announcement').innerHTML = `
-                            <div class="alert alert-warning" role="alert">
+                            <div class="alert ${data.announcement.type == "Warning" ? 'alert-warning' : 'alert-info'}" role="alert">
                                 <div class="text-center">
                                     <h2 class="section-heading text-uppercase">Upozornění</h2>
                                     <p>${data.announcement.message}</p>

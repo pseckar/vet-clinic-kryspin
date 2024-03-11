@@ -2,11 +2,13 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = isset($_POST['message']) ? trim($_POST['message']) : '';
     $active = isset($_POST['active']) ? true : false;
+    $type = isset($_POST['type']) ? $_POST['type'] : 'Warning'; // Default to 'Warning' if not set
 
     $data = [
         "announcement" => [
             "active" => $active,
-            "message" => $message
+            "message" => $message,
+            "type" => $type // Save the type to the JSON file
         ]
     ];
 
@@ -14,4 +16,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header('Location: admin.php?success=1');
     exit;
 }
+
 ?>

@@ -3,4 +3,5 @@ RewriteEngine On
 RewriteBase /
 RewriteRule ^admin$ admin.php [NC,L]
 RewriteRule ^login$ login.php [NC,L]
+RewriteRule ^user.json - [F,L,NC]
 </IfModule>
