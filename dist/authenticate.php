@@ -10,11 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($username === $valid_username && password_verify($password, $hashed_password)) {
         $_SESSION['loggedin'] = true;
-        header('Location: admin.php');
+        header('Location: admin');
         exit;
     } else {
         $_SESSION['error'] = 'Invalid username or password.';
-        header('Location: login.php');
+        header('Location: login');
         exit;
     }
 }
