@@ -1,0 +1,9 @@
+{
+    "announcement": {
+        "active": true,
+        "message": "Test announcement message.",
+        "type": "Information",
+        "auto_hide": true,
+        "hide_time": "2024-03-12T23:10"
+    }
+}

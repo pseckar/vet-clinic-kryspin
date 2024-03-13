@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <!-- 
 TODO:
-- metadata
-- favicon (ios too)
-- refactor warning color to css
 - author, sources
 - height of the map - set min value
 - unify fonts
 - names in front of photos (for mobile)
 - images in different res for different media
-- automatic turn-off of announcement
-- proper error display of unsuccessful login and successful update of announcement
-- better fb logo hover
+- proper error display of unsuccessful login
 - buttons to go down and to the top
 - js for getting actual year
-- masthead min height of bg img (for large displays) or perhaps just different margin?
 - cleanup code - unused, commented out
 -->
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta name="description" content="Oficiální stránky veterinární ordinace U Kryšpína Hlinsko" />
+        <meta name="author" content="Petr Sečkář" />
+        <meta name="keywords" content="veterina, Hlinsko, vet, veterinární ordinace, U Kryšpína, Kryšpín, Korábová, Bodláková, pohotovost, veterinary practice, klinika, clinic, vakcinace, Odčervení, Interní medicína, malá zvířata, pes, psy, kočka, kočky, Dermatologie, Endokrinologie, Gynekologie, Oftalmologie, Urologie, RTG, USG, kardiologie, problémové chování">
         <title>Veterina U Kryšpína - Hlinsko</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -33,6 +28,10 @@ TODO:
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+        <link rel="manifest" href="assets/img/site.webmanifest">
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -51,31 +50,27 @@ TODO:
                         <li class="nav-item"><a class="nav-link" href="#team">O&nbsp;nás</a></li>
                         <li class="nav-item"><a class="nav-link" href="#clinic">Služby</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-social ms-3" href="https://www.facebook.com/people/Veterina-U-Kry%C5%A1p%C3%ADna-Hlinsko/100063786616008/" target="_blank" aria-label="Facebook"><i class="fab fa-square-facebook"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/people/Veterina-U-Kry%C5%A1p%C3%ADna-Hlinsko/100063786616008/" target="_blank" aria-label="Facebook"><i class="fab fa-square-facebook"></i></a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div class="float-lg-end navbar navbar-expand-lg pt-6 me-5" id="logoNav" hidden>
-                <img  src="assets/img/logo.png" alt="..." /> 
-        </div>
         <!-- Masthead-->
         <header class="masthead">
-        <!-- <header class="masthead pb-4" style="padding-top: 23rem;"> -->
-            <!-- <div class="container masthead-logo"> -->
             <div class="container">
                 <div class="row">
                     <!-- Empty div for space to see the background image -->
                     <div class="col-md-5"></div>
                     <div class="col-md-7"><img class="" style="width:100%;" src="assets/img/logo.png" alt="..." /> </div>
                 </div>
-                <!-- <img class="mt-5" src="assets/img/logo.png" alt="..." />              -->
             </div>
         </header>
         <!-- Hours-->
         <section class="page-section" id="hours">
             <div class="container">
                 <div class="row text-center justify-content-center">
+                    <!-- Placeholder for announcement based on content in database -->
+                    <div class="col-md-6 px-3" id="announcement"></div>
                     <div class="col-md-6">
                         <div class="text-center">
                             <h2 class="section-heading text-uppercase">Ordinační doba</h2>
@@ -100,42 +95,6 @@ TODO:
                           </table>
                         <p class="text-center">Přednost mají objednaní pacienti.</p>
                     </div>
-                    <div class="col-md-6" hidden>
-                        <div class="text-center">
-                            <h2 class="section-heading text-uppercase">Ordinační doba</h2>
-                        </div>
-                        <table class="table table-hover">
-                            <tbody>
-                              <tr>
-                                <th>Po</th4>
-                                <td>10:00-12:00</td>
-                                <td>14:00-17:00</td>
-                              </tr>
-                              <tr>
-                                <th>Út</th>
-                                <td>9:00-11:00</td>
-                                <td>15:00-18:00</td>
-                              </tr>
-                              <tr>
-                                <th>St</th4>
-                                <td>10:00-12:00</td>
-                                <td>14:00-17:00</td>
-                              </tr>
-                              <tr>
-                                <th>Čt</th>
-                                <td>9:00-11:00</td>
-                                <td>15:00-18:00</td>
-                              </tr>
-                              <tr>
-                                <th>Pá</th>
-                                <td>9:00-11:00</td>
-                                <td>15:00-18:00</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        <p class="text-center">Přednost mají objednaní pacienti.</p>
-                    </div>
-                    <div class="col-md-6 px-3" id="announcement"></div>
                 </div>
             </div>
         </section>
@@ -149,6 +108,9 @@ TODO:
                     <div class="col-md-12">
                         <p class="text-center">
                             Vítejte na stránkách <i>Veteriny U Kryšpína</i> (dříve také <i>Veterina Hlinsko</i>), první specializované ordinace pro malá zvířata v Hlinsku.
+                        </p>
+                        <p class="text-center">
+                            Seznamte se s týmem, který v ordinaci potkáte.
                         </p>
                     </div>
                 </div>
@@ -280,10 +242,13 @@ TODO:
         <!-- JS for showing/hiding announcement -->
         <!-- TODO removed this:<i class="fas fa-warning" style="color: #e6b400"></i> -->
         <script>
-            fetch('info.json')
+            fetch('data.json')
                 .then(response => response.json())
                 .then(data => {
-                    if (data.announcement.active) {
+                    const now = new Date();
+                    const hideTime = new Date(data.announcement.hide_time);
+
+                    if (data.announcement.active && (!data.announcement.auto_hide || now < hideTime)) {
                         document.getElementById('announcement').innerHTML = `
                             <div class="alert ${data.announcement.type == "Warning" ? 'alert-warning' : 'alert-info'}" role="alert">
                                 <div class="text-center">

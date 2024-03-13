@@ -22,11 +22,15 @@
     </header>
     <section class="page-section">
             <div class="container">
-                <div class="row text-center justify-content-center">
-                    <div class="col-md-6">
+            <div class="row text-center justify-content-center">
+                    <div class="col-md-8">
                         <div class="text-center">
                             <h2 class="section-heading text-uppercase">Přihlášení administrátora</h2>
                         </div>
+                    </div>
+            </div>
+                <div class="row text-center justify-content-center">
+                    <div class="col-md-4">
                         <form action="authenticate.php" method="post">
                         <div class="mb-3">
                             <label for="username" class="form-label">Jméno</label>
