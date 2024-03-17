@@ -3,13 +3,15 @@
 TODO:
 - author, sources
 - height of the map - set min value
-- unify fonts
 - names in front of photos (for mobile)
 - images in different res for different media
 - proper error display of unsuccessful login
 - buttons to go down and to the top
 - js for getting actual year
 - cleanup code - unused, commented out
+- readme with live link, responsive design examples
+- fix transparent menu on tablet
+- fix color on selectbox
 -->
 <html lang="en">
     <head>
@@ -24,7 +26,7 @@ TODO:
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
@@ -61,7 +63,9 @@ TODO:
                 <div class="row">
                     <!-- Empty div for space to see the background image -->
                     <div class="col-md-5"></div>
-                    <div class="col-md-7"><img class="" style="width:100%;" src="assets/img/logo.png" alt="..." /> </div>
+                    <div class="col-md-7">
+                        <img class="masthead-img" style="width:100%;" src="assets/img/logo.png" alt="..." />
+                    </div>
                 </div>
             </div>
         </header>
