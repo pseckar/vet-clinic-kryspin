@@ -109,10 +109,10 @@ $hideTime = isset($data['announcement']['hide_time']) ? $data['announcement']['h
                         </div>
                         <div class="row text-center justify-content-center">
                             <div class="col-md-4 mb-4">
-                                <a class="btn btn-primary text-uppercase ms-auto responsive-text-button" href="/">Návrat na web</a>
+                                <a class="btn btn-primary text-uppercase ms-auto responsive-text-button" href="/">Zpět</a>
                             </div>    
                             <div class="col-md-4">
-                                <button class="btn btn-primary text-uppercase" type="submit">Aktualizovat</button>
+                                <button class="btn btn-primary text-uppercase" type="submit">Uložit</button>
                             </div>
                         </div>
                     </div>   

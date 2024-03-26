@@ -1,5 +1,21 @@
 # [Start Bootstrap - Agency](https://startbootstrap.com/theme/agency)
 
+TODO:
+- height of the map - set min value
+- names in front of photos (for mobile) X
+- images in different res for different media X
+- proper error display of unsuccessful login
+- buttons to go down and to the top
+- js for getting actual year
+- cleanup code - unused, commented out X
+- readme with live link, responsive design examples X
+- fix transparent menu on tablet X
+- center petexpert logo X
+- custom mailserver X
+- redirect X
+- team and clinic padding not on mobile X
+- forbid save of photos X
+
 [Agency](https://startbootstrap.com/theme/agency) is a one page, agency portfolio theme built with [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/). This theme features several content sections, a responsive portfolio grid, modal windows for each portfolio item, and a working PHP based contact form.
 
 ## Preview

@@ -74,7 +74,7 @@
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
   --bs-link-color: #3e7c7a;
-  --bs-link-hover-color: #68bcba;
+  --bs-link-hover-color: #4e9694;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff4cc;
 }
@@ -335,6 +335,7 @@ th {
   border-color: inherit;
   border-style: solid;
   border-width: 0;
+  vertical-align: center;
 }
 
 label {
@@ -2180,9 +2181,9 @@ textarea.form-control-lg {
   }
 }
 .form-select:focus {
-  border-color: #ffe480;
+  border-color: #9debea;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
+  box-shadow: 0 0 0 0.25rem #9debea;
 }
 .form-select[multiple], .form-select[size]:not([size="1"]) {
   padding-right: 0.75rem;
@@ -3850,7 +3851,7 @@ textarea.form-control-lg {
 .navbar-toggler:focus {
   text-decoration: none;
   outline: 0;
-  box-shadow: 0 0 0 var(--bs-navbar-toggler-focus-width);
+  box-shadow: 0 0 0  #3e7c7a;
 }
 
 .navbar-toggler-icon {
@@ -10961,8 +10962,9 @@ p {
   }
 }
 header.masthead {
-  padding-top: 5.5rem;
-  padding-bottom: 17rem;
+  padding-top: 1.5rem;
+  padding-bottom: 22rem;
+  margin-top: 5rem;
   text-align: center;
   color: #fff;
   background-image: url("../assets/img/header-bg-phone.jpg");
@@ -10970,6 +10972,12 @@ header.masthead {
   background-attachment: scroll;
   background-position: top;
   background-size: cover;
+}
+header.masthead.img2 {
+  background-image: url("../assets/img/header-bg-phone2.jpg");
+  padding-top: 0.5rem;
+  padding-bottom: 23rem;
+  margin-top: 5.4rem;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -10990,6 +10998,7 @@ header.masthead .masthead-heading {
   header.masthead {
     padding-top: 6rem;
     padding-bottom: 20rem;
+    margin-top: 0;
     background-image: url("../assets/img/header-bg.jpg");
   }
   header.masthead .masthead-subheading {
@@ -11393,6 +11402,14 @@ section#form form#contactForm :-ms-input-placeholder {
     display: inline; /* Only show the large screen text */
   }
 }
+
+/* Only mini and small screens */
+@media (max-width: 599px) {
+  .responsive-text-button .text-mini-small-screen {
+    display: inline; /* Only show the small screen text */
+  }
+}
+
 
 .footer-link a {
   color: var(--bs-black);

@@ -1,18 +1,4 @@
 <!DOCTYPE html>
-<!-- 
-TODO:
-- author, sources
-- height of the map - set min value
-- names in front of photos (for mobile)
-- images in different res for different media
-- proper error display of unsuccessful login
-- buttons to go down and to the top
-- js for getting actual year
-- cleanup code - unused, commented out
-- readme with live link, responsive design examples
-- fix transparent menu on tablet
-- fix color on selectbox
--->
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -39,11 +25,15 @@ TODO:
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
             <div class="container">
-                <div class="navbar-brand">
-                    <a class="btn btn-primary btn-xl text-uppercase ms-auto responsive-text-button" href="tel:+420773917333"><i class="fas fa-phone"></i><span class="text-medium-screen text-large-screen"> Objednání:</span><span class="text-small-screen text-medium-screen text-large-screen"> 773 917 333</span></a>
+                <div class="navbar-brand responsive-text-button">
+                    <span class="text-medium-screen text-large-screen">
+                        <a class="btn btn-primary btn-xl text-uppercase ms-auto responsive-text-button" href="#contact"><i class="fas fa-phone"></i><span class="text-medium-screen text-large-screen"> Objednání:</span><span class="text-small-screen text-medium-screen text-large-screen"> 773 917 333</span></a>
+                    </span>
+                    <span class="text-mini-small-screen">
+                        <a class="btn btn-primary btn-xl text-uppercase ms-auto responsive-text-button" href="tel:+420773917333"><i class="fas fa-phone"></i><span class="text-medium-screen text-large-screen"> Objednání:</span><span class="text-small-screen text-medium-screen text-large-screen"> 773 917 333</span></a>
+                    </span>
                 </div>
-                <!-- removed navbar-toggler -->
-                <button class="navbar-toggler btn btn-primary btn-xl ms-auto collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <button id="navbtn" class="navbar-toggler btn btn-primary btn-xl ms-auto collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -64,7 +54,11 @@ TODO:
                     <!-- Empty div for space to see the background image -->
                     <div class="col-md-5"></div>
                     <div class="col-md-7">
-                        <img class="masthead-img" style="width:100%;" src="assets/img/logo.png" alt="..." />
+                        <picture>
+                            <source media="(max-width: 767px)" srcset="assets/img/logo-phone.png" />
+                            <source media="(min-width: 768px)" srcset="assets/img/logo.png" />
+                            <img class="masthead-img" style="width:100%;" src="assets/img/logo.png" alt="..." />
+                          </picture>
                     </div>
                 </div>
             </div>
@@ -72,28 +66,28 @@ TODO:
         <!-- Hours-->
         <section class="page-section" id="hours">
             <div class="container">
-                <div class="row text-center justify-content-center">
+                <div class="row justify-content-center">
                     <!-- Placeholder for announcement based on content in database -->
                     <div class="col-md-6 px-3" id="announcement"></div>
                     <div class="col-md-6">
                         <div class="text-center">
                             <h2 class="section-heading text-uppercase">Ordinační doba</h2>
                         </div>
-                        <table class="table table-hover">
+                        <table class="table table-hover align-middle">
                             <tbody>
                               <tr>
-                                <th>Po, St</th>
-                                <td>10:00-12:00</td>
-                                <td>14:00-17:00</td>
+                                <th class="text-left">Po, St</th>
+                                <td class="text-center">10.00-12.00</td>
+                                <td class="text-center">14.00-17.00</td>
                               </tr>
                               <tr>
-                                <th>Út, Čt, Pá</th>
-                                <td>9:00-11:00</td>
-                                <td>15:00-18:00</td>
+                                <th class="text-left">Út, Čt, Pá</th>
+                                <td class="text-center">9.00-11.00</td>
+                                <td class="text-center">15.00-18.00</td>
                               </tr>
                               <tr>
-                                <th>So, Ne</th>
-                                <td colspan="2">Zavřeno (pohotovost pouze po tel. domluvě)</td>
+                                <th class="text-left">So, Ne</th>
+                                <td colspan="2" class="text-center">Zavřeno (pohotovost pouze po tel. domluvě)</td>
                               </tr>
                             </tbody>
                           </table>
@@ -111,56 +105,62 @@ TODO:
                 <div class="row">
                     <div class="col-md-12">
                         <p class="text-center">
-                            Vítejte na stránkách <i>Veteriny U Kryšpína</i> (dříve také <i>Veterina Hlinsko</i>), první specializované ordinace pro malá zvířata v Hlinsku.
+                            Vítejte na stránkách <i>"Veteriny U Kryšpína"</i>, dříve také <i>"Veterina Hlinsko"</i>, první specializované ordinace pro malá zvířata v Hlinsku.
                         </p>
-                        <p class="text-center">
-                            Seznamte se s týmem, který v ordinaci potkáte.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-2 p-5">
+                        <img class="img-fluid mx-auto rounded-pill" src="assets/img/team/verca.jpg" alt="..." />
+                    </div>
+                    <div class="col-md-8 mb-2 p-5">
+                        <h1 class="text">Verča</h1>
+                        <h4 class="text mb-2">MVDr. Veronika Bodláková</h4>
+                        <p class="text">
+                            Studium na Veterinární a farmaceutické univerzitě v Brně jsem ukončila v roce 2012. Zkušenosti jsem získala ve veterinární klinice v Jihlavě, dále v praxi s velkými hospodářskými zvířaty, či také absolvováním osteosyntetického kurzu v Berlíně. Miluji své flatí parťačky a kočičí dámy. Kontinuální studium komunikace se zvířaty a jejich etologie mi otevírá nové možnosti a pohledy ve veterinární medicíně.
                         </p>
+                        <p class="text">
+                            Při své práci uplatňuji a preferuji individuální přístup k pacientovi a majitelům.
+                        </p>        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 mb-2 p-5 order-2 order-md-1">
+                        <h1 class="text">Barča</h1>
+                        <h4 class="text mb-2">MVDr. Barbora Sečkářová</h4>
+                        <p class="text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus tellus lacus, nec malesuada ante finibus et. Ut in quam efficitur felis finibus ornare. Phasellus sit amet volutpat ex, sed facilisis justo. Aliquam diam nisl, malesuada vitae fringilla quis, dignissim cursus purus. Pellentesque venenatis ligula semper orci mollis porta. Praesent lacinia, nulla vel congue auctor, nisl erat tincidunt sapien, nec congue sem lectus vitae neque. Ut venenatis feugiat turpis, ac dictum arcu sodales gravida. 
+                        </p>
+                    </div>
+                    <div class="col-md-4 mb-2 p-5 order-1 order-md-2">
+                        <img class="img-fluid mx-auto rounded-pill" src="assets/img/team/barca.jpg" alt="..." />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 mb-2 p-5">
                         <img class="img-fluid mx-auto rounded-pill" src="assets/img/team/peta.jpg" alt="..." />
                     </div>
-                    <div class="col-md-8 mb-2 p-5">
+                    <div class="col-md-8 mb-2 p-5"> 
                         <h1 class="text">Peťa</h1>
                         <h4 class="text mb-2">MVDr. Petra Korábová</h4>
                         <p class="text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus tellus lacus, nec malesuada ante finibus et. Ut in quam efficitur felis finibus ornare. Phasellus sit amet volutpat ex, sed facilisis justo. Aliquam diam nisl, malesuada vitae fringilla quis, dignissim cursus purus. Pellentesque venenatis ligula semper orci mollis porta. Praesent lacinia, nulla vel congue auctor, nisl erat tincidunt sapien, nec congue sem lectus vitae neque. Ut venenatis feugiat turpis, ac dictum arcu sodales gravida. 
+                            Studium na Veterinární a farmaceutické univerzitě v Brně jsem ukončila v roce 2013, své počáteční praktické dovednosti jsem čerpala na klinice v Hradci Králové. Jsem velkou milovnicí koček a plazů, zejména ještěrů. Ve volném čase se věnuji svým domácím mazlíčkům, turistice, jízdě na kole, četbě a stolním hrám.
                         </p>
                         <p class="text">
-                            Praesent sem lorem, lacinia a tortor vitae, porttitor semper nisl. Curabitur nec sapien sagittis, cursus turpis vitae, molestie dolor. In lectus lorem, congue eget interdum non, molestie id tellus. Etiam facilisis augue odio, non accumsan erat convallis ut. Phasellus vitae lacus purus. Curabitur commodo ipsum ligula, vitae sodales lorem mattis sit amet. Nunc ullamcorper risus pretium nisi dictum, a sagittis neque malesuada. Mauris ac ipsum vitae purus pellentesque tincidunt.
+                            Nyní jsem na mateřské dovolené 😊
                         </p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-8 mb-2 p-5">
-                        <h1 class="text">Verča</h1>
-                        <h4 class="text mb-2">MVDr. Veronika Bodláková</h4>
+                    <div class="col-md-8 mb-2 p-5 order-2 order-md-1">
+                        <h1 class="text">Elis</h1>
+                        <h4 class="text mb-2">Eliška Knotková</h4>
                         <p class="text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus tellus lacus, nec malesuada ante finibus et. Ut in quam efficitur felis finibus ornare. Phasellus sit amet volutpat ex, sed facilisis justo. Aliquam diam nisl, malesuada vitae fringilla quis, dignissim cursus purus. Pellentesque venenatis ligula semper orci mollis porta. Praesent lacinia, nulla vel congue auctor, nisl erat tincidunt sapien, nec congue sem lectus vitae neque. Ut venenatis feugiat turpis, ac dictum arcu sodales gravida. 
-                        </p>
-                        <p class="text">
-                            Praesent sem lorem, lacinia a tortor vitae, porttitor semper nisl. Curabitur nec sapien sagittis, cursus turpis vitae, molestie dolor. In lectus lorem, congue eget interdum non, molestie id tellus. Etiam facilisis augue odio, non accumsan erat convallis ut. Phasellus vitae lacus purus. Curabitur commodo ipsum ligula, vitae sodales lorem mattis sit amet. Nunc ullamcorper risus pretium nisi dictum, a sagittis neque malesuada. Mauris ac ipsum vitae purus pellentesque tincidunt.
+                            V naší ordinaci zajišťuji péči o pacienty v ambulanci, na hospitalizaci, při operativních zákrocích i při následné pooperační péči. Jsem pomocnou rukou lékaře, kdykoliv je zapotřebí. Součástí mé práce je komunikace s klienty. Vystudovala jsem střední zemědělskou školu s oborem chovatelství a i nadále se vzdělávám. Mezi mé zájmy patří samozřejmě zvířata - jak psi, kočky tak i plazi, a kromě toho příjemně strávený čas s přáteli, například na procházce s našimi čtyřnohými miláčky. 
                         </p>
                     </div>
-                    <div class="col-md-4 mb-2 p-5">
-                        <img class="img-fluid mx-auto rounded-pill" src="assets/img/team/verca.jpg" alt="..." />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 mb-2 p-5">
-                        <img class="img-fluid mx-auto rounded-pill" src="assets/img/team/barca.jpg" alt="..." />
-                    </div>
-                    <div class="col-md-8 mb-2 p-5"> 
-                        <h1 class="text">Barča</h1>
-                        <h4 class="text mb-2">MVDr. Barbora Sečkářová</h4>
-                        <p class="text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus tellus lacus, nec malesuada ante finibus et. Ut in quam efficitur felis finibus ornare. Phasellus sit amet volutpat ex, sed facilisis justo. Aliquam diam nisl, malesuada vitae fringilla quis, dignissim cursus purus. Pellentesque venenatis ligula semper orci mollis porta. Praesent lacinia, nulla vel congue auctor, nisl erat tincidunt sapien, nec congue sem lectus vitae neque. Ut venenatis feugiat turpis, ac dictum arcu sodales gravida. 
-                        </p>
-                        <p class="text">
-                            Praesent sem lorem, lacinia a tortor vitae, porttitor semper nisl. Curabitur nec sapien sagittis, cursus turpis vitae, molestie dolor. In lectus lorem, congue eget interdum non, molestie id tellus. Etiam facilisis augue odio, non accumsan erat convallis ut. Phasellus vitae lacus purus. Curabitur commodo ipsum ligula, vitae sodales lorem mattis sit amet. Nunc ullamcorper risus pretium nisi dictum, a sagittis neque malesuada. Mauris ac ipsum vitae purus pellentesque tincidunt.
-                        </p>
+                    <div class="col-md-4 mb-2 p-5 order-1 order-md-2">
+                        <img class="img-fluid mx-auto rounded-pill" src="assets/img/team/elis.jpg" alt="..." />
                     </div>
                 </div>
             </div>
@@ -168,11 +168,53 @@ TODO:
         <!-- Clinic-->
         <section class="page-section" id="clinic">
             <div class="container">
-                <div class="text-center">
+                <div class="text-center mb-5">
                     <h2 class="section-heading text-uppercase">Služby</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
-                
+                <div class="row">
+                    <div class="col-md-6 mb-2 p-5">
+                        <img class="img-fluid mx-auto rounded-5" src="assets/img/clinic/microscope.jpg" alt="..." />
+                    </div>
+                    <div class="col-md-6 mb-2 p-5">
+                        <h2 class="text">Vybavení</h2>
+                        <p class="text">
+                            Ultrasonografický přístroj, rtg s přímou digitalizací, inhalační anestezie, videootoskop, mikroskop a další.
+                        </p>
+                        <p class="text">
+                            Přístroje zn. IDEXX na kompletní laboratorní vyšetření vč. progesteronu a vyšetření moči.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-2 p-5 order-2 order-md-1">
+                        <h2 class="text">Naše služby zahrnují</h2>
+                        <p class="text">
+                            <ul>
+                                <li>Preventivní péče: vakcinace, čipování a vystavování petpasů, konzultace výživy, stříhání drápků, vyprázdnění an. žlázek, stomatologická prevence, geriatrický program.</li>
+                                <li>Léčebná a diagnostická péče: využití moderních vyšetřovacích přístrojů, diagnostika březosti, infuze a monitoring pacienta.</li>
+                                <li>Chirurgie-preventivní zákroky (kastrace všech druhů zvířat), drobné kožní zákroky (např. útvary, odběr kožní tkáně pro další diagnostiku).</li>
+                                <li>Akutní břišní operace (např. zánět dělohy, odstranění nádorů, torze žaludku, císařský řez a další).</li>
+                                <li>Zákroky u drobných savců a plazů.</li>
+                                <li>Čištění zubů ultrazvukem, broušení zubů u drobných savců.</li>
+                                <li>Po předchozí domluvě je možné ošetřit pacienta i u Vás doma.</li>
+                            </ul>
+                        </p>                        
+                    </div>
+                    <div class="col-md-6 mb-2 p-5 order-1 order-md-2">
+                        <img class="img-fluid mx-auto rounded-5" src="assets/img/clinic/usg.jpg" alt="..." />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-2 p-5">
+                        <img class="img-fluid mx-auto rounded-5" src="assets/img/clinic/building.jpg" alt="..." />
+                    </div>
+                    <div class="col-md-6 mb-2 p-5">
+                        <p class="text">
+                            Jsme smluvní veterinární ordinací pojištovny PetExpert.
+                        </p>
+                        <a href="https://www.petexpert.cz/" target="_blank"><img src="assets/img/clinic/petexpert.png" width="30%" alt="..." /></a>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- Contact-->
@@ -189,26 +231,29 @@ TODO:
                             Rváčovská 868<br/>
                             539 01 Hlinsko (okres Chrudim)<br/>
                         </p>
+                        <p class="text ps-2">
+                            Pro naše klienty je domluvené parkování na soukromém parkovišti Rváčovská naproti ordinaci (U Švandy).
+                        </p>
                         <h5 class="text ps-2">Kontakty:</h5>
                         <p class="text ps-2">
                             MVDr. Petra Korábová, MVDr. Veronika Bodláková<br/>
                             IČ: 03057577<br/>
                             Tel: <a href="tel:+420773917333">+420 773 917 333</a><br/>
                             E-mail: <a href="mailto:veterinahlinsko@seznam.cz">veterinahlinsko@seznam.cz</a><br/>
-                            Sledujte nás na FB <a href="https://www.facebook.com/people/Veterina-U-Kry%C5%A1p%C3%ADna-Hlinsko/100063786616008/">Veterina U Kryšpína Hlinsko</a>
+                            Sledujte nás na FB <a href="https://www.facebook.com/people/Veterina-U-Kry%C5%A1p%C3%ADna-Hlinsko/100063786616008/" target="_blank">Veterina U Kryšpína Hlinsko</a>
                         </p>
                         <h5 class="text ps-2">Ordinační doba:</h5>
                         <table class="table table-borderless">
                             <tbody>
                             <tr>
                                 <td>Po, St</td>
-                                <td>10:00 - 12:00</td>
-                                <td>14:00 - 17:00</td>
+                                <td>10.00-12.00</td>
+                                <td>14.00-17.00</td>
                             </tr>
                             <tr>
                                 <td>Út, Čt, Pá</td>
-                                <td>9:00 - 11:00</td>
-                                <td>15:00 - 18:00</td>
+                                <td>9.00-11.00</td>
+                                <td>15.00-18.00</td>
                             </tr>
                             <tr>
                                 <td colspan="3">Mimo ordinační hodiny objednané operace. Výjezdy a pohotovost pouze po předchozí telefonické domluvě. </td>
@@ -226,15 +271,11 @@ TODO:
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="footer-link col-lg-4 text-lg-start">
-                        <a class="footer-link" href="/admin">Administrace webu</a>
-                    </div>
-                    <div class="col-lg-4 text-center">
+                    <div class="footer-link col-lg-6 text-lg-start">
                         Copyright &copy; Veterina U Kryšpína 2024
                     </div>
-                    <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="#!">Author</a>
-                        <a class="link-dark text-decoration-none" href="#!">Sources</a>
+                    <div class="col-lg-6 text-lg-end">
+                        <a class="footer-link" href="mailto:petrsec@gmail.com">Autor webu</a>
                     </div>
                 </div>
             </div>
@@ -244,7 +285,6 @@ TODO:
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <!-- JS for showing/hiding announcement -->
-        <!-- TODO removed this:<i class="fas fa-warning" style="color: #e6b400"></i> -->
         <script>
             fetch('data.json')
                 .then(response => response.json())
