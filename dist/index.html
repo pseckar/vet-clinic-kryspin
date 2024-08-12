@@ -104,8 +104,15 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="text-center">
+                        <!-- TODO: restore original after migration is successful -->
+                        <p class="text-center" hidden>
                             Vítejte na stránkách <i>"Veteriny U Kryšpína"</i>, dříve také <i>"Veterina Hlinsko"</i>, první specializované ordinace pro malá zvířata v Hlinsku.
+                        </p>
+                        <p class="text-center" id="old-intro"> 
+                            Vítejte na stránkách první specializované ordinace pro malá zvířata v Hlinsku.<br>
+                            Ordinace byla založena s myšlenkou vnést do oblasti veterinární medicíny tohoto kraje svěží proud v podobě novodobých trendů, s nimiž jsme se setkaly na předchozích pracovištích. To nám umožňují moderní diagnostické a terapeutické přístroje, spolupráce s odborníky z jiných klinik, s SVÚ Jihlava, humánní laboratoří a poliklinikou.<br>
+                            Při preventivních prohlídkách, zejména v rámci vakcinace, provádíme důkladné klinické vyšetření. Mnohdy jsou tak odhalena opomíjená onemocnění kardiovaskulárního systému či dutiny ústní spojená s tvorbou zubního kamene.<br>
+                            Poskytujeme služby základní a preventivní péče, mikročipy a vystavení pasu, exotická zvířata a drobní savci, základní laboratorní vyšetření, další diagnostika, ošetření chrupu pomocí ultrazvuku, chirurgické zákroky, reprodukční medicína. Více informací naleznete níže.
                         </p>
                     </div>
                 </div>
@@ -129,7 +136,7 @@
                         <h1 class="text">Barča</h1>
                         <h4 class="text mb-2">MVDr. Barbora Sečkářová</h4>
                         <p class="text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus tellus lacus, nec malesuada ante finibus et. Ut in quam efficitur felis finibus ornare. Phasellus sit amet volutpat ex, sed facilisis justo. Aliquam diam nisl, malesuada vitae fringilla quis, dignissim cursus purus. Pellentesque venenatis ligula semper orci mollis porta. Praesent lacinia, nulla vel congue auctor, nisl erat tincidunt sapien, nec congue sem lectus vitae neque. Ut venenatis feugiat turpis, ac dictum arcu sodales gravida. 
+                            Veterinární lékař.
                         </p>
                     </div>
                     <div class="col-md-4 mb-2 p-5 order-1 order-md-2">
@@ -188,17 +195,22 @@
                 <div class="row">
                     <div class="col-md-6 mb-2 p-5 order-2 order-md-1">
                         <h2 class="text">Naše služby zahrnují</h2>
+                        <!-- TODO: restore original (remove nested lists) after migration is successful -->
                         <p class="text">
                             <ul>
-                                <li>Preventivní péče: vakcinace, čipování a vystavování petpasů, konzultace výživy, stříhání drápků, vyprázdnění an. žlázek, stomatologická prevence, geriatrický program.</li>
-                                <li>Léčebná a diagnostická péče: využití moderních vyšetřovacích přístrojů, diagnostika březosti, infuze a monitoring pacienta.</li>
-                                <li>Chirurgie-preventivní zákroky (kastrace všech druhů zvířat), drobné kožní zákroky (např. útvary, odběr kožní tkáně pro další diagnostiku).</li>
-                                <li>Akutní břišní operace (např. zánět dělohy, odstranění nádorů, torze žaludku, císařský řez a další).</li>
-                                <li>Zákroky u drobných savců a plazů.</li>
-                                <li>Čištění zubů ultrazvukem, broušení zubů u drobných savců.</li>
-                                <li>Po předchozí domluvě je možné ošetřit pacienta i u Vás doma.</li>
+                                <li>Preventivní péče: vakcinace, čipování a vystavování petpasů, konzultace výživy, stříhání drápků, vyprázdnění an. žlázek, stomatologická prevence, geriatrický program.
+                                    <ul>
+                                        <li>Psi se vakcinují proti: psince, parvoviróze (po 6. týdnu věku), infekční hepatitidě, psincovému kašli, parainfluenze (po 8. týdnu věku), leptospiróze (po 10. týdnu) a povinně proti vzteklině (od 3. do 6. měsíce věku). Další možné vakcíny jsou proti Bordetelle, koronaviróze, lymské borelióze, tetanu, giardióze a dermatofytóze.</li>
+                                        <li>Kočky se vakcinují proti: panleukopenii, inf. rinotracheitidě, kalicivirové infekci (po 6. týdnu věku). Další možné vakcíny jsou proti vzteklině, Bordetelle, Chlamydiím, virové leukémii, infekční peritonitidě a dermatofytóze.</li>
+                                        <li>Králíci se vakcinují proti moru a myxomatóze.</li>
+                                        <li>Fretky se vakcinují proti: parvoviróze, psince, vzteklině a hepatitidě.</li>
+                                        <li>Odčervení proti oblým a plochým červům, vnějším parazitům, parazitologické vyšetření</li>
+                                        <li>Ošetření drápků, análních žlázek, očí a uší</li>
+                                        <li>Problematika obezity, poradenství v oblasti výživy, nabídka veterinárních diet</li>
+                                    </ul>
+                                </li>
                             </ul>
-                        </p>                        
+                        </p>
                     </div>
                     <div class="col-md-6 mb-2 p-5 order-1 order-md-2">
                         <img class="img-fluid mx-auto rounded-5" src="assets/img/clinic/usg.jpg" alt="..." />
@@ -209,7 +221,25 @@
                         <img class="img-fluid mx-auto rounded-5" src="assets/img/clinic/building.jpg" alt="..." />
                     </div>
                     <div class="col-md-6 mb-2 p-5">
+                        <!-- TODO: restore original (remove nested lists) after migration is successful -->
                         <p class="text">
+                            <ul>
+                                <li>Léčebná a diagnostická péče: využití moderních vyšetřovacích přístrojů, diagnostika březosti, infuze a monitoring pacienta.
+                                    <ul>
+                                        <li>Dermatologie (kožní seškrab, mikroskopie, diagnostika kožních zánětů, kultivace, odběr vzorků na histologii apod.)</li>
+                                        <li>Endokrinologie (diagnostika a terapie onemocnění štítné žlázy, nadledvin, cukrovky...)</li>
+                                        <li>Gynekologie a porodnictví (zjištění vhodné doby krytí, USG březosti, vedení porodu...)</li>
+                                        <li>Oftalmologie (slzný test, léčba vředů rohovky apod.)</li>
+                                        <li>Urologie (USG močového měchýře, vyšetření moči, odstranění močových kamenů) a další</li>
+                                        <li>Poradna pro psy s problémovým chováním</li>
+                                    </ul>
+                                </li>
+                                <li>Chirurgie-preventivní zákroky (kastrace všech druhů zvířat), drobné kožní zákroky (např. útvary, odběr kožní tkáně pro další diagnostiku).</li>
+                                <li>Akutní břišní operace (např. zánět dělohy, odstranění nádorů, torze žaludku, císařský řez a další).</li>
+                                <li>Zákroky u drobných savců a plazů.</li>
+                                <li>Čištění zubů ultrazvukem, broušení zubů u drobných savců.</li>
+                                <li>Po předchozí domluvě je možné ošetřit pacienta i u Vás doma.</li>
+                            </ul>
                             Jsme smluvní veterinární ordinací pojištovny PetExpert.
                         </p>
                         <a href="https://www.petexpert.cz/" target="_blank"><img src="assets/img/clinic/petexpert.png" width="30%" alt="..." /></a>
@@ -224,22 +254,22 @@
                     <h2 class="section-heading text-uppercase">Kontakt</h2>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6" itemscope itemtype="https://schema.org/Organization">
                         <h5 class="text ps-2">Adresa ordinace:</h5>
                         <p class="text ps-2">
-                            Veterina U Kryšpína<br/>
-                            Rváčovská 868<br/>
-                            539 01 Hlinsko (okres Chrudim)<br/>
+                            <span itemprop="name">Veterina U Kryšpína<br/></span>
+                            <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="streetAddress">Rváčovská 868</span><br/>
+                            <span itemprop="postalCode">539 01</span> Hlinsko (okres Chrudim)<br/></span>
                         </p>
                         <p class="text ps-2">
                             Pro naše klienty je domluvené parkování na soukromém parkovišti Rváčovská naproti ordinaci (U Švandy).
                         </p>
                         <h5 class="text ps-2">Kontakty:</h5>
-                        <p class="text ps-2">
+                        <p class="text ps-2" itemprop="contactPoint" itemscope itemtype="https://schema.org/Contact     Point">
                             MVDr. Petra Korábová, MVDr. Veronika Bodláková<br/>
                             IČ: 03057577<br/>
-                            Tel: <a href="tel:+420773917333">+420 773 917 333</a><br/>
-                            E-mail: <a href="mailto:veterinahlinsko@seznam.cz">veterinahlinsko@seznam.cz</a><br/>
+                            Tel: <a href="tel:+420773917333"><span itemprop="telephone">+420 773 917 333</span></a><br/>
+                            E-mail: <a href="mailto:veterinahlinsko@seznam.cz"><span itemprop="email">veterinahlinsko@seznam.cz</span></a><br/>
                             Sledujte nás na FB <a href="https://www.facebook.com/people/Veterina-U-Kry%C5%A1p%C3%ADna-Hlinsko/100063786616008/" target="_blank">Veterina U Kryšpína Hlinsko</a>
                         </p>
                         <h5 class="text ps-2">Ordinační doba:</h5>
@@ -262,7 +292,8 @@
                         </table>
                     </div>
                     <div class="col-md-6 me-auto">
-                        <iframe style="border:none;width: 100%; height: 100%" src="https://frame.mapy.cz/s/kahecodaba" frameborder="0"></iframe>
+                        <iframe style="border:none;width: 100%; height: 100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2455.1948275894574!2d15.897064584853062!3d49.76238462109459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dbb3bf2885025%3A0x45907b6ee0200c3c!2sVeterina%20Hlinsko!5e0!3m2!1scs!2scz!4v1719439866446!5m2!1scs!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <!-- <iframe style="border:none;width: 100%; height: 100%" src="https://frame.mapy.cz/s/kahecodaba" frameborder="0"></iframe> -->
                     </div>
                 </div>
             </div>

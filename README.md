@@ -7,7 +7,6 @@ TODO:
 - proper error display of unsuccessful login
 - buttons to go down and to the top
 - js for getting actual year
-- cleanup code - unused, commented out X
 - readme with live link, responsive design examples X
 - fix transparent menu on tablet X
 - center petexpert logo X

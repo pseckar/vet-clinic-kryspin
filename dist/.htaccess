@@ -3,5 +3,8 @@ RewriteEngine On
 RewriteBase /
 RewriteRule ^admin$ admin.php [NC,L]
 RewriteRule ^login$ login.php [NC,L]
+RewriteRule ^pohotovost$ pohotovost.html [NC,L]
+RewriteRule ^galerie$ galerie.html [NC,L]
+RewriteRule ^chirurgicke-zakroky$ chirurgicke-zakroky.html [NC,L]
 RewriteRule ^user.json - [F,L,NC]
 </IfModule>
