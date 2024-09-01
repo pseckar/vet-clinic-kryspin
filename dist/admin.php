@@ -55,7 +55,11 @@ $hideTime = isset($data['announcement']['hide_time']) ? $data['announcement']['h
                     <div class="col-md-6">
                         <?php if (isset($_GET['success'])): ?>
                             <?php if ($_GET['success'] == 'true'): ?>
-                                <div class="alert alert-success" role="alert"><p>Upozornění bylo úspěšně aktualizováno.</p>
+                                <div class="alert alert-success" role="alert">
+                                    <p>
+                                        <b>Upozornění bylo úspěšně aktualizováno.</b><br>
+                                        Změny se nemusí projevit okamžitě. Pro načtení změn obnovte stránku pomocí Ctrl+F5
+                                    </p>
                                 <a class="btn btn-primary text-uppercase ms-auto responsive-text-button" href="/">Návrat na web</a>
                                 </div>
                             <?php elseif ($_GET['success'] == 'false'): ?>

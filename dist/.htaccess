@@ -3,8 +3,33 @@ RewriteEngine On
 RewriteBase /
 RewriteRule ^admin$ admin.php [NC,L]
 RewriteRule ^login$ login.php [NC,L]
-RewriteRule ^pohotovost$ pohotovost.html [NC,L]
-RewriteRule ^galerie$ galerie.html [NC,L]
-RewriteRule ^chirurgicke-zakroky$ chirurgicke-zakroky.html [NC,L]
+RewriteRule ^pohotovost$ legacy_pohotovost.html [NC,L]
+RewriteRule ^galerie$ legacy_galerie.html [NC,L]
+RewriteRule ^chirurgicke-zakroky$ legacy_chirurgicke-zakroky.html [NC,L]
 RewriteRule ^user.json - [F,L,NC]
+Redirect 301 /kontakt.html https://www.veterinahlinsko.cz/#contact
+Redirect 301 /pohotovost.html https://www.veterinahlinsko.cz/pohotovost
+Redirect 301 /sluzby.html https://www.veterinahlinsko.cz/#clinic
+Redirect 301 /galerie.html https://www.veterinahlinsko.cz/galerie
+Redirect 301 /chirurgicke-zakroky.html https://www.veterinahlinsko.cz/chirurgicke-zakroky
+Redirect 301 /uvod.html https://www.veterinahlinsko.cz/
+Redirect 301 /cipy-a-pasy.html https://www.veterinahlinsko.cz/
+Redirect 301 /exoti.html https://www.veterinahlinsko.cz/
+Redirect 301 /laboratorni-vysetreni.html https://www.veterinahlinsko.cz/
+Redirect 301 /odkazy.html https://www.veterinahlinsko.cz/
+Redirect 301 /osetreni-chrupu.html https://www.veterinahlinsko.cz/
+Redirect 301 /poradna.html https://www.veterinahlinsko.cz/
+Redirect 301 /pristroje.html https://www.veterinahlinsko.cz/
+Redirect 301 /reprodukcni-medicina.html https://www.veterinahlinsko.cz/
+Redirect 301 /ultrasonograficke-vysetreni.html https://www.veterinahlinsko.cz/
+Redirect 301 /zakladni-pece.html https://www.veterinahlinsko.cz/
+
+# Redirect http://veterinahlinsko.cz and https://veterinahlinsko.cz to https://www.veterinahlinsko.cz
+RewriteCond %{HTTP_HOST} ^veterinahlinsko\.cz [NC]
+RewriteRule ^(.*)$ https://www.veterinahlinsko.cz/$1 [L,R=301]
+
+# Redirect all http:// requests to https:// for www subdomain
+RewriteCond %{HTTP_HOST} ^www\.veterinahlinsko\.cz [NC]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://www.veterinahlinsko.cz/$1 [L,R=301]
 </IfModule>
